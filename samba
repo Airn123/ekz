@@ -1,0 +1,21 @@
+sudo apt install samba
+sudo nano /etc/samba/smb.conf в файл вписываем
+[global]
+   workgroup = WORKGROUP        # Имя рабочей группы
+   server string = Samba Server # Описание сервера
+   security = user              # Метод аутентификации
+
+[public]
+   path = /srv/samba/share      # Путь к общей папке
+   browseable = yes             # Доступность в сети
+   read only = no               # Разрешение на запись
+   guest ok = yes               # Разрешение на доступ гостя
+
+Создаем пользователей
+sudo useradd username
+sudo passwd username
+Добавляем пользователей в самбу
+sudo smbpasswd -a username (sudo smbpasswd -e username если хотите активировать)
+sudo systemctl start smbd
+sudo systemctl enable smbd
+На другом устройстве впишите \\192.168.1.100\public

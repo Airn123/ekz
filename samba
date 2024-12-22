@@ -1,3 +1,4 @@
+if ethernet not work check nano /etc/resolv.conf
 sudo apt install samba
 sudo nano /etc/samba/smb.conf 
 add

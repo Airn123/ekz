@@ -1,0 +1,10 @@
+apt install isc-dhcp-server -y
+Nano /etc/default/isc-dhcp-server  редактируем INTERFACESv4="(вписываем нужный интерфейс)"
+Nano /etc/dhcp/dhcpd.conf
+Раскоментируем autoritative, редактируем option domain-name-servers и option domain-name
+ вписываем 
+subnet 192.168.0.0 netmask 255.255.255.0 {
+  range 192.168.0.10 192.168.0.200;
+  option routers 192.168.0.254; 
+  option domain-name-servers 8.8.8.8;
+}

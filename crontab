@@ -1,0 +1,4 @@
+crontab -e
+* * * * * /var/backup-script
+echo "test" | sendmail zkarnauhov@gmail.com
+0 8 2 * * /var/backup-script

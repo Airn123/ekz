@@ -8,3 +8,7 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
   option routers 192.168.0.254; 
   option domain-name-servers 8.8.8.8;
 }
+host HQ-SRV {
+hardware ethernet 1e:07:8b:03:7a:4e;
+fixed-address 192.168.10.2;
+}
